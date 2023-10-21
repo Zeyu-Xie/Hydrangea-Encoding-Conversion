@@ -48,13 +48,13 @@ const conversion = str => {
         output = output + bytes[i].toString(2).padStart(8, "0") + " "
     }
 
-    output += "\n"
+    output += "\n\n"
 
     for (let i = 0; i < bytes.length; i++) {
         output = output + bytes[i].toString(16).padStart(2, "0") + " "
     }
 
-    output += "\n"
+    output += "\n\n"
 
     output += test1(bytes)
 
