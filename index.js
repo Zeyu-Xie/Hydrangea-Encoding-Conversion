@@ -44,17 +44,31 @@ const conversion = str => {
     
     let output = ""
 
+    output += "- Binary: \n"
+
     for (let i = 0; i < bytes.length; i++) {
         output = output + bytes[i].toString(2).padStart(8, "0") + " "
     }
 
     output += "\n\n"
 
+    output += "- Decimal: \n"
+
+    for (let i = 0; i < bytes.length; i++) {
+        output = output + bytes[i].toString(10).padStart(3, "0") + " "
+    }
+
+    output += "\n\n"
+
+    output += "- Hexadecimal: \n"
+
     for (let i = 0; i < bytes.length; i++) {
         output = output + bytes[i].toString(16).padStart(2, "0") + " "
     }
 
     output += "\n\n"
+
+    output += "- Base64: \n"
 
     output += test1(bytes)
 
