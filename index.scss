@@ -1,7 +1,10 @@
 * {
-    font-family: 'Courier New', Courier, monospace;
-}
-
-textarea {
-    resize: none;
+    textarea {
+        resize: none;
+    };
+    div {
+        #toContent {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    }
 }
