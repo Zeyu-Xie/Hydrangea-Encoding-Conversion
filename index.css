@@ -1,8 +1,24 @@
 * textarea {
   resize: none;
 }
-* div #toContent {
-  font-family: "Courier New", Courier, monospace;
+* #title {
+  font-family: "This Night";
+}
+* .input-group .input-group-text {
+  font-family: "Back to School";
+  font-weight: bold;
+}
+* #toContent h3 {
+  font-family: "Back to School";
+}
+
+@font-face {
+  font-family: "This Night";
+  src: url("./This Night.ttf");
+}
+@font-face {
+  font-family: "Back to School";
+  src: url("./BackToSchool.ttf");
 }
 
 /*# sourceMappingURL=index.css.map */

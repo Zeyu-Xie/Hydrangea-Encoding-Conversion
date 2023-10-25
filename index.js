@@ -1,6 +1,11 @@
 const _fromContent = document.getElementById("fromContent")
 const _toContent = document.getElementById("toContent")
 
+const _binaryStr = document.getElementById("binaryStr")
+const _demicalStr = document.getElementById("demicalStr")
+const _hexademicalStr = document.getElementById("hexademicalStr")
+const _base64Str = document.getElementById("base64Str")
+
 _fromContent.addEventListener("change", () => {
     conversion(_fromContent.value)
 })
@@ -65,20 +70,17 @@ const bytesToBase64 = fromBytesContent => {
     return toBase64Content
 }
 
+const eleList = [_binaryStr, _demicalStr, _hexademicalStr, _base64Str]
+const labelList = ["Binary", "Demical", "Hexademical", "Base64"]
+const funcList = [bytesToBinary, bytesToDemical, bytesToHexademical, bytesToBase64]
+const funcLength = funcList.length
+
 const conversion = str => {
 
-    const labelList = ["Binary", "Demical", "Hexademical", "Base64"]
-    const funcList = [bytesToBinary, bytesToDemical, bytesToHexademical, bytesToBase64]
-    const funcLength = funcList.length
     const bytes = new TextEncoder("utf-8").encode(str);
 
     let output = ""
-    for(let i=0;i<funcLength;i++) {
-        output+="- "
-        output+=labelList[i]
-        output+="\n"
-        output+=funcList[i](bytes)
-        output+="\n\n"
+    for (let i = 0; i < funcLength; i++) {
+        eleList[i].innerText = funcList[i](bytes)
     }
-    _toContent.innerText = output
 }
