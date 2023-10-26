@@ -5,6 +5,8 @@ const _binaryStr = document.getElementById("binaryStr")
 const _demicalStr = document.getElementById("demicalStr")
 const _hexademicalStr = document.getElementById("hexademicalStr")
 const _base64Str = document.getElementById("base64Str")
+const _md5Str = document.getElementById("md5Str")
+const _sha1Str = document.getElementById("sha1Str")
 
 _fromContent.addEventListener("change", () => {
     conversion(_fromContent.value)
@@ -70,14 +72,50 @@ const bytesToBase64 = fromBytesContent => {
     return toBase64Content
 }
 
-const eleList = [_binaryStr, _demicalStr, _hexademicalStr, _base64Str]
-const labelList = ["Binary", "Demical", "Hexademical", "Base64"]
-const funcList = [bytesToBinary, bytesToDemical, bytesToHexademical, bytesToBase64]
+const bytesToMd5 = bytes => {
+    function uint8ArrayToWordArray(uint8Array) {
+        var words = []
+        for (var i = 0; i < uint8Array.length; i += 4) {
+            words.push(
+                (uint8Array[i] << 24) |
+                (uint8Array[i + 1] << 16) |
+                (uint8Array[i + 2] << 8) |
+                (uint8Array[i + 3])
+            )
+        }
+        return CryptoJS.lib.WordArray.create(words, uint8Array.length)
+    }
+    var wordArray = uint8ArrayToWordArray(bytes)
+    var md5Hash = CryptoJS.MD5(wordArray)
+    return md5Hash.toString(CryptoJS.enc.Hex)
+}
+
+const bytesToSha1 = bytes => {
+    function uint8ArrayToWordArray(uint8Array) {
+        var words = []
+        for (var i = 0; i < uint8Array.length; i += 4) {
+            words.push(
+                (uint8Array[i] << 24) |
+                (uint8Array[i + 1] << 16) |
+                (uint8Array[i + 2] << 8) |
+                (uint8Array[i + 3])
+            )
+        }
+        return CryptoJS.lib.WordArray.create(words, uint8Array.length)
+    }
+    var wordArray = uint8ArrayToWordArray(bytes)
+    var sha1Hash = CryptoJS.SHA1(wordArray)
+    return sha1Hash.toString(CryptoJS.enc.Hex)
+}
+
+const eleList = [_binaryStr, _demicalStr, _hexademicalStr, _base64Str, _md5Str, _sha1Str]
+const labelList = ["Binary", "Demical", "Hexademical", "Base64", "Md5", "Sha1Str"]
+const funcList = [bytesToBinary, bytesToDemical, bytesToHexademical, bytesToBase64, bytesToMd5, bytesToSha1]
 const funcLength = funcList.length
 
 const conversion = str => {
 
-    const bytes = new TextEncoder("utf-8").encode(str);
+    const bytes = new TextEncoder("utf-8").encode(str)
 
     let output = ""
     for (let i = 0; i < funcLength; i++) {
