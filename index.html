@@ -5,50 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydrangea Encoding Conversion</title>
-    <link rel="icon" href="./bread_128.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="https://zeyu-xie.github.io/Myosotis-Web/Scholar_Lite/favicon.ico">
+    <link rel="stylesheet" href="https://zeyu-xie.github.io/Myosotis-Web/Scholar_Lite/index.css">
+    <style>
+        * {
+            word-break: break-all;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container mt-3 mb-3">
-        <h1 id="title" class="mb-3">Hydrangea Encoding Conversion</h1>
-        <div class="input-group mb-3">
-            <span class="input-group-text">Content</span>
-            <textarea class="form-control" id="fromContent" aria-label="With textarea"></textarea>
+    <header>
+        <h1 style="display: none;">Hydrangea Encoding Conversion</h1>
+        <nav>
+            <a href="#">Hydrangea Encoding Conversion</a>
+        </nav>
+    </header>
+
+    <span>
+        <h2>Content</h2>
+        <textarea id="fromContent" aria-label="With textarea"
+            style="resize: none; width: 100%; min-height: 24vh; padding: 0.6rem 1rem;"
+            placeholder="Please input your text here."></textarea>
+    </span>
+
+    <span id="toContent">
+        <h2>Output</h2>
+        <h3>Binary</h3>
+        <div id="binaryStr">
+
         </div>
-        <div class="mb-3" id="toContent">
-            <h3 class="mb-3">Binary</h3>
-            <div class="mb-3" id="binaryStr">
+        <h3>Demical</h3>
+        <div id="demicalStr">
 
-            </div>
-            <h3 class="mb-3">Demical</h3>
-            <div id="demicalStr" class="mb-3">
-
-            </div>
-            <h3 class="mb-3">Hexademical</h3>
-            <div id="hexademicalStr" class="mb-3">
-
-            </div>
-            <h3 class="mb-3">Base64</h3>
-            <div id="base64Str" class="mb-3">
-
-            </div>
-            <h3 class="mb-3">Md5</h3>
-            <div id="md5Str" class="mb-3">
-
-            </div>
-            <h3 class="mb-3">Sha1</h3>
-            <div id="sha1Str" class="mb-3">
-
-            </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        <h3>Hexademical</h3>
+        <div id="hexademicalStr">
+
+        </div>
+        <h3>Base64</h3>
+        <div id="base64Str">
+
+        </div>
+        <h3>Md5</h3>
+        <div id="md5Str">
+
+        </div>
+        <h3>Sha1</h3>
+        <div id="sha1Str">
+
+        </div>
+    </span>
+
+    <footer>
+        <p>
+            ©️ <time class="current_year">[Current Year]</time> <a href="https://zeyu-xie.github.io"
+                class="author">[Author]</a>. All rights reserved.
+        </p>
+        <nav>
+            <a href="mailto:xie.zeyu20@gmail.com">Email</a> |
+            <a href="https://github.com/zeyu-xie">GitHub</a>
+        </nav>
+    </footer>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9/crypto-js.js"></script>
+    <script src="https://zeyu-xie.github.io/Myosotis-Web/Scholar_Lite/index.js"></script>
     <script src="./index.js"></script>
 </body>
 

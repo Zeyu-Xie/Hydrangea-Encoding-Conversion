@@ -13,6 +13,7 @@ _fromContent.addEventListener("change", () => {
 })
 
 const bytesToBinary = fromBytesContent => {
+    if (fromBytesContent.length == 0) return ""
     const fromBytesContentLength = fromBytesContent.length
     let toBinaryContent = ""
     for (let i = 0; i < fromBytesContentLength; i++) {
@@ -22,6 +23,7 @@ const bytesToBinary = fromBytesContent => {
 }
 
 const bytesToDemical = fromBytesContent => {
+    if (fromBytesContent.length == 0) return ""
     const fromBytesContentLength = fromBytesContent.length
     let toDemicalContent = ""
     for (let i = 0; i < fromBytesContentLength; i++) {
@@ -31,6 +33,7 @@ const bytesToDemical = fromBytesContent => {
 }
 
 const bytesToHexademical = fromBytesContent => {
+    if (fromBytesContent.length == 0) return ""
     const fromBytesContentLength = fromBytesContent.length
     let toHexademicalContent = ""
     for (let i = 0; i < fromBytesContentLength; i++) {
@@ -40,6 +43,7 @@ const bytesToHexademical = fromBytesContent => {
 }
 
 const bytesToBase64 = fromBytesContent => {
+    if (fromBytesContent.length == 0) return ""
     const tempList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     const fromBytesContentLength = fromBytesContent.length
     let toCodeContent = ""
@@ -73,6 +77,7 @@ const bytesToBase64 = fromBytesContent => {
 }
 
 const bytesToMd5 = bytes => {
+    if (bytes.length == 0) return ""
     function uint8ArrayToWordArray(uint8Array) {
         var words = []
         for (var i = 0; i < uint8Array.length; i += 4) {
@@ -91,6 +96,7 @@ const bytesToMd5 = bytes => {
 }
 
 const bytesToSha1 = bytes => {
+    if (bytes.length == 0) return ""
     function uint8ArrayToWordArray(uint8Array) {
         var words = []
         for (var i = 0; i < uint8Array.length; i += 4) {
